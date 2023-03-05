@@ -6,7 +6,7 @@
 #    By: talsaiaa <talsaiaa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/16 03:08:10 by talsaiaa          #+#    #+#              #
-#    Updated: 2022/08/26 17:32:22 by talsaiaa         ###   ########.fr        #
+#    Updated: 2023/03/06 01:31:44 by talsaiaa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,20 +30,21 @@ RM		= rm -f
 CFLAGS = -Wall -Wextra -Werror
 
 .c.o:
-		${CC} ${CFLAGS} -g -c $< -o ${<:.c=.o}
+	@	${CC} ${CFLAGS} -g -c $< -o ${<:.c=.o}
 
 $(NAME): ${OBJS}
-		ar rcsv ${NAME} ${OBJS}
+	@	ar -r ${NAME} ${OBJS}
 
 bonus:	${OBJS} ${OBJSBONUS}
-		ar rcsv ${NAME} ${OBJS} ${OBJSBONUS}
+	@	ar -r ${NAME} ${OBJS} ${OBJSBONUS}
 
-all:	${NAME}
+all:
+	@	${NAME}
 
 clean:
-		${RM} ${OBJS} ${OBJSBONUS}
+	@	${RM} ${OBJS} ${OBJSBONUS}
 
 fclean:	clean
-		${RM} ${NAME}
+	@	${RM} ${NAME}
 
 re:		fclean all
