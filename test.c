@@ -6,7 +6,7 @@
 /*   By: talsaiaa <talsaiaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 01:13:20 by talsaiaa          #+#    #+#             */
-/*   Updated: 2023/03/08 13:52:19 by talsaiaa         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:10:57 by talsaiaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,22 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
-int		create_trgb(int r, int g, int b)
+int		create_rgb(int r, int g, int b)
 {
 	return (r << 16 | g << 8 | b);
 }
 
-// int		get_t(int trgb)
-// {
-// 	return ((trgb >> 24) & 0xFF);
-// }
-
-int		get_r(int trgb)
+int		get_r(int rgb)
 {
-	return ((trgb >> 16) & 0xFF);
+	return ((rgb >> 16) & 0xFF);
 }
-int		get_g(int trgb)
+int		get_g(int rgb)
 {
-	return ((trgb >> 8) & 0xFF);
+	return ((rgb >> 8) & 0xFF);
 }
-int		get_b(int trgb)
+int		get_b(int rgb)
 {
-	return (trgb & 0xFF);
+	return (rgb & 0xFF);
 }
 
 int		window_close(void)
@@ -73,7 +68,7 @@ int	main(void)
 	img.img = mlx_new_image(mlx, WIN_H, WIN_W);
 	img.addr = mlx_get_data_addr(img.img, &img.bit_per_pixel, &img.line_length,
 				&img.endian);
-	color = create_trgb(255, 255, 0);
+	color = create_rgb(255, 255, 0);
 	// my_mlx_pixel_put(&img, 5, 5, color); //0x00FF0000 is red and hex rep of (0, 255, 0, 0)
 	while (y <= WIN_H / 2)
 	{
