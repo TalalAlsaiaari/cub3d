@@ -6,7 +6,7 @@
 /*   By: talsaiaa <talsaiaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 01:13:37 by talsaiaa          #+#    #+#             */
-/*   Updated: 2023/03/08 13:39:49 by talsaiaa         ###   ########.fr       */
+/*   Updated: 2023/03/10 18:42:53 by talsaiaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ extern int WIN_W;
 
 # include "mlx/mlx.h"
 # include "Libft/libft.h"
+# include "stdio.h"
 
 #endif

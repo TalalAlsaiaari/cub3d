@@ -6,7 +6,7 @@
 /*   By: talsaiaa <talsaiaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 01:13:20 by talsaiaa          #+#    #+#             */
-/*   Updated: 2023/03/10 16:10:57 by talsaiaa         ###   ########.fr       */
+/*   Updated: 2023/03/10 20:48:15 by talsaiaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,19 @@ int		window_close(void)
 	exit(0);
 }
 
+int		key_hook(int keycode, void *args)
+{
+	(void)args;
+	printf("key pressed: %d\n", keycode);
+	return 0;
+}
+
+int		mouse_hook(void *mlx_win)
+{
+	printf("mouse pos: %d\n", mlx_mouse_get_pos(mlx_win, 0, (int *)1));
+	return 0;
+}
+
 int	main(void)
 {
 	void	*mlx;
@@ -81,5 +94,8 @@ int	main(void)
 	}
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_hook(mlx_win, 17, 0, window_close, 0);
+	mlx_key_hook(mlx_win, window_close, 0);
+	mlx_key_hook(mlx_win, key_hook, 0);
+	mlx_mouse_hook(mlx_win, mouse_hook, mlx_win);
 	mlx_loop(mlx);
 }
