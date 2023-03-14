@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   cu_args_check.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: talsaiaa <talsaiaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 01:13:37 by talsaiaa          #+#    #+#             */
-/*   Updated: 2023/03/14 14:08:15 by talsaiaa         ###   ########.fr       */
+/*   Created: 2023/03/14 11:16:48 by talsaiaa          #+#    #+#             */
+/*   Updated: 2023/03/14 14:17:04 by talsaiaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "../cub3d.h"
 
-extern int WIN_H;
-extern int WIN_W;
-
-# define FORWARD 13
-# define BACKWARD 1
-# define LEFT 0
-# define RIGHT 2
-# define LOOK_LEFT 123
-# define LOOK_RIGHT 124
-
-# include "mlx/mlx.h"
-# include "Libft/libft.h"
-# include <stdio.h>
-# include <fcntl.h>
-
-void	cu_print_error(char *msg);
-void	cu_args_check(int ac, char *av);
-
-#endif
+void	cu_args_check(int ac, char *av)
+{
+	if (ac != 2)
+		cu_print_error("Invalid number of arguments");
+	if (!ft_strchr(av, '.') || ft_strncmp("cub", (av + ft_strlen(av) - 3), 3)
+		|| open(av, O_DIRECTORY) > 0 || open(av, O_RDONLY) < 0)
+		cu_print_error("Invalid argument");
+}
