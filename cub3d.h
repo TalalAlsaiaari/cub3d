@@ -6,7 +6,7 @@
 /*   By: talsaiaa <talsaiaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 01:13:37 by talsaiaa          #+#    #+#             */
-/*   Updated: 2023/03/15 11:19:19 by talsaiaa         ###   ########.fr       */
+/*   Updated: 2023/03/15 16:27:03 by talsaiaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,10 @@ typedef struct s_map
 typedef struct s_file
 {
 	int		fd;
-	int		lineLen;
+	int		fileLen;
 	char	*line;
 	char	*fileArray;
+	char	**file2D;
 }				t_file;
 
 typedef struct s_game
