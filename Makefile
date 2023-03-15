@@ -6,13 +6,15 @@
 #    By: talsaiaa <talsaiaa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 00:30:54 by talsaiaa          #+#    #+#              #
-#    Updated: 2023/03/14 13:14:21 by talsaiaa         ###   ########.fr        #
+#    Updated: 2023/03/15 11:32:08 by talsaiaa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	cub3d
 
-SRCS	=	main.c parsing/cu_args_check.c parsing/cu_print_error.c
+SRCS	=	main.c \
+			parsing/cu_args_check.c parsing/cu_print_error.c parsing/cu_saving_file.c \
+			gnl/get_next_line.c gnl/get_next_line_utils.c \
 
 OBJS	=	$(SRCS:.c=.o)
 

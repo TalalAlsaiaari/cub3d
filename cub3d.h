@@ -6,7 +6,7 @@
 /*   By: talsaiaa <talsaiaa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 01:13:37 by talsaiaa          #+#    #+#             */
-/*   Updated: 2023/03/14 14:08:15 by talsaiaa         ###   ########.fr       */
+/*   Updated: 2023/03/15 11:19:19 by talsaiaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,36 @@ extern int WIN_W;
 
 # include "mlx/mlx.h"
 # include "Libft/libft.h"
+# include "gnl/get_next_line.h"
 # include <stdio.h>
 # include <fcntl.h>
+# include <stdlib.h>
+
+typedef struct s_map
+{
+	int		nline;
+	int		linelen;
+	char	*a;
+	char	*one_d;
+	char	**two_d;
+}				t_map;
+
+typedef struct s_file
+{
+	int		fd;
+	int		lineLen;
+	char	*line;
+	char	*fileArray;
+}				t_file;
+
+typedef struct s_game
+{
+	t_map	map;
+	t_file	file;
+}				t_game;
 
 void	cu_print_error(char *msg);
 void	cu_args_check(int ac, char *av);
+void	cu_saving_file(t_game *game);
 
 #endif

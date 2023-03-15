@@ -4,7 +4,7 @@
 4. Other than the map, each type of element can be seperated by one or more empty lines.
 5. The map content has to be the last. Other elements can be in any order.
 6. Other than the map, info of element can be seperated by one or more space.
-7. Spaced are a valid part of the map.
+7. Spaces are a valid part of the map.
 8. Other than the map, the elements first info must be the type identifier, composed of
 	one or two characters (NO, SO, WE, EA), followed by specific info for that object.
 
